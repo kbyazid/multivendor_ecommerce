@@ -1,9 +1,16 @@
+import { Button } from "@/components/ui/button";
+import ThemeToggle from "@/components/shared/themeToggle";
+import { link } from "fs";
 import Image from "next/image";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px]  min-h-screen p-8 pb-20 gap-16 sm:p-20 font-bold text-blue-600 font-[family-name:var(--font-geist-sans)]">
-        <div>Welcome to the Course</div>
-    </div>
+  return (  
+    <div className="p-5">  
+        <div className="w-100 flex justify-end ">
+          <ThemeToggle/>
+        </div>
+        <div className="text-dark-500 font-bold text-3xl font-roboto">Welcome to the Course</div>
+        <Button variant={"default"}>Click here </Button>
+    </div>  
   );
 }
