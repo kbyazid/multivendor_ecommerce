@@ -1,3 +1,6 @@
+import { ClerkProvider,
+  SignInButton,
+ } from '@clerk/nextjs';
 import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
 import { Geist, Geist_Mono, Inter, Roboto_Mono } from "next/font/google";
@@ -30,6 +33,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    <ClerkProvider>
     <html lang="fr">
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${robotoFont.variable}  antialiased`}
@@ -37,9 +41,8 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           {children}
         </ThemeProvider>
-       
-
       </body>
     </html>
+    </ClerkProvider>
   );
 }
